@@ -1,0 +1,301 @@
+.totalView {
+    background-color: #e3fff6;
+}
+
+.title {
+    background-color: grey;
+    margin: 0px;
+}
+
+.title p {
+    text-align: center;
+    color: white;
+    margin: 0px;
+}
+#condadidateBody .tableselected{
+    background-color: yellow;
+}
+.viewWindow {
+    min-width: 200px;
+    min-height: 400px;
+    
+    margin: 10px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: grey;
+}
+
+.setWindow {
+    min-height: 100px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: grey;
+}
+.vtkView{
+    min-width: 200px;
+    min-height: 400px;
+    
+    margin: 10px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: grey;
+}
+.umapWindow{
+    
+    min-height: 500px;
+    
+    margin: 10px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: grey;
+}
+.parameterTreeView svg {
+    /* height: 100%; */
+    width: 100%;
+}
+
+.UMAP svg {
+    /* height: 100%; */
+    
+    width: 100%;
+}
+
+.vtkView svg {
+    /* height: 100%; */
+    width: 100%;
+}
+
+.comparisonView svg {
+    /* height: 100%; */
+    width: 100%;
+}
+#comparisonView input{
+    width: 100px;
+}
+
+/* ---------------- */
+
+circle {
+    fill-opacity: 0.5;
+}
+
+.lasso path {
+    stroke: rgb(80, 80, 80);
+    stroke-width: 2px;
+}
+
+.lasso .drawn {
+    fill-opacity: .05;
+}
+
+.lasso .loop_close {
+    fill: none;
+    stroke-dasharray: 4, 4;
+}
+
+.lasso .origin {
+    fill: #3399FF;
+    fill-opacity: .5;
+}
+
+.not_possible path {
+    fill: rgb(200, 200, 200);
+}
+
+.possible path {
+    fill: #d11016;
+}
+
+.pieSelected path {
+    stroke: red;
+}
+
+.node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.vtkView {
+    position: relative;
+    /* background-color: rgb(51, 77, 102); */
+}
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    overflow: auto;
+    margin-top: 0px;
+    width: 100%;
+}
+/* .styled-table thead,
+.styled-table tbody{
+    display: block;
+} */
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    width: 100%;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody {
+    /* max-height: 200px;  */
+   
+    /* overflow-y: scroll; */
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.container-fluid {
+    font-family:"Microsoft YaHei"
+}
+
+
+
+
+
+/* slider */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  /* slider */
+
+/* sunbrust */
+.d3-tip {
+    line-height: 1;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  .table-wrapper {
+      position:relative;
+  }
+  .table-scroll {
+      height:200px;
+      overflow:auto;  
+      margin-top:20px;
+  }
+  .table-wrapper{/*table*/
+      width:100%;
+  }
+  .relative-position{/*table*/
+      position:relative;   
+  }
+  .table-wrapper{ /* table thead th .text */
+      position:absolute;   
+      top:-20px;
+      z-index:2;
+      height:20px;
+      width:35%;
+      border:1px solid red;
+  }
+  .scrollable{
+      overflow:scroll;
+      height:250px;
+  }
+/* sunbrust */
