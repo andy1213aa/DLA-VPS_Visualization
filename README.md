@@ -28,7 +28,7 @@ The directory of the folder `model` should be saved at the same level of the fil
 * Step4: Have fun!
 
 
-## Use Case
+## Use Cases
 ### Discovery of Valuable Simulation Parameter Configurations
 ![changeOfHubble](https://user-images.githubusercontent.com/59753286/150678211-6542e1ff-d767-410d-8423-8bb3122a5e36.png)
 ### Sub-region Analysis
