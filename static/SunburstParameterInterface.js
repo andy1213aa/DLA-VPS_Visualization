@@ -74,7 +74,6 @@ class SunburstParameterInterface
 
         function clickCheckBox(){
             let checkStatus = d3.select(this).property("checked");
-            console.log( d3.select(this).attr("id"));
             let dataInfoName = d3.select(this).attr("id").split("-")[1];
             vis.selectedDataInfo[dataInfoName] = checkStatus;
             vis.enalbeDataInfo = [];
@@ -242,10 +241,12 @@ class SunburstParameterInterface
                 vis.parameterInfo = [];
                 paraNameList.forEach(d=>vis.parameterInfo.push(parameterInfoDic[d]));
                 vis.buildSunburst( true );
+                let selectItem = _.map(d3.selectAll(".pieSelected").data(), function(o) { return _.pick(o, 'OmM','OmB', 'h'); });
+                vis.hightlight(this, selectItem, d3.rgb(255, 128, 128) );
             }
         }
         vis.legendSubG.call(drag);
-
+        
     }
 
     buildSunburst( remove ){
@@ -395,6 +396,7 @@ class SunburstParameterInterface
                                         .attr('display', 'none');
 
         this.dataInfoG = this.nodes.append('g');
+        
         this.buildDataInfoAroundSunburst();
         
         this.pathHead.on("click", vis.selectArcEventFunc);
@@ -573,8 +575,9 @@ class SunburstParameterInterface
 
     buildDataInfoAroundSunburst(){
         const vis = this;
-        
+    
         this.enalbeDataInfo.forEach((dInfoName, dInfoNameIdx)=>{
+
             this.arcGeneratorDataInfo = d3.arc()
                                         .startAngle(function(d) { return d.x0; })
                                         .endAngle(function(d) { return d.x1; })
@@ -639,7 +642,9 @@ class SunburstParameterInterface
                         
                         if( d.id ==="root" || Object.keys(d.data.nodeInfo).length < vis.parameterInfo.length )return '';//what it return does not matter
                         else{
-                            
+                            // console.log(d.data);
+                            // console.log(d.data.subSpaceIndexInfo);
+                            // console.log(dInfoName);
                             let value = vis.computeSubspaceDataInfo(d.data.subSpaceIndexInfo, dInfoName);
                             // //make sure the value in array are greater then 0
                             // if (dInfoMin[dInfoName] < 0) {value = value + Math.abs(dInfoMin[dInfoName])+1;}
@@ -749,12 +754,14 @@ class SunburstParameterInterface
 
     paraDictionaryToSubspaceIndex(dic){
         let idx1D = 0;
+        console.log(this.paraOrderForSubspace);
         this.paraOrderForSubspace.forEach(function(d,i){
+            
             let pName = d['name'];
             let nInterval = d['nIntervals'];
             let interval = d['interval'];
             let start = d['start'];
-            let value = dic[pName] + 0.001;
+            let value = dic[pName] + 0.0000001;
             let idx = Math.floor((value-start)/interval);
             idx1D = idx1D*nInterval + idx;
         });
@@ -867,7 +874,7 @@ class SunburstParameterInterface
             console.log(d);
             let idx1D = this.paraDictionaryToSubspaceIndex(d);
             console.log(idx1D);
-            console.log(SunburstParameterInterface.subSpaceData.length);
+            console.log(SunburstParameterInterface.subSpaceData);
             SunburstParameterInterface.subSpaceData[idx1D].visit = true;
         })
 

@@ -18,13 +18,13 @@ let selectParameterTextEventFunc = function(d){
     let para = {};
     paraName.forEach(pname=>para[pname]=+p[pname][0].toFixed(3));
     invokePara.push(para);
-    console.log(para);
+
   });
   sunburstUI.setVisitedSubspace(invokePara)
   let newData = getRequest("/runCandidate", {"members": invokePara})['data'];
   drawTable(invokePara);
   projectionViewInterface.registMember(newData)
-  console.log(invokePara);
+ 
   
 };
 

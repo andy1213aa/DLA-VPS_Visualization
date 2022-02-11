@@ -7,8 +7,6 @@ from tensorflow import keras
 
 import json
 import os
-from sklearn import manifold
-from sklearn import preprocessing
 import umap
 from modelEvaluate import evaluate
 import time
@@ -479,7 +477,7 @@ def getBarSensitivity(): #need {variable, data, divide, size, startposition}
         # else:
         grad = calculateGradient_eachBlock(tf.constant(members[i], dtype=np.float32, shape=(1, 3)), divide) #output gradients consist all totalParameters.
         for p in range(3): # Three totalParameters in our work.
-            # vtkVolumeGrad = np.ones((64, 64, 64))#未來要改成可以fit octree 現在先寫死 5/14
+            
             eachParameterGrad = grad[:, p]
             # for x in range(0, 64, divide):
             #     for y in range(0, 64, divide):
@@ -589,4 +587,4 @@ def getVtkInterestingRegion(): #need {blockID: float or int, size:int}
     
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=8789)
+    app.run(host="0.0.0.0", port=80)

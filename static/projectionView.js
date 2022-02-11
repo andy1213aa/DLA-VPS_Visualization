@@ -51,7 +51,7 @@ class projectionView{
         vis.register = vis.register.concat(newData);
         drawUmap();
         clickEvent();
-        console.log(this.register);
+       
         function drawUmap(){
             let xMax = 15.93244//d3.max(data, d => d['positionX'])
             let xMin = -6.96694 //d3.min(data, d => d['positionX'])
@@ -61,11 +61,11 @@ class projectionView{
     
             // Add X axis
             let x = d3.scaleLinear()
-                .domain([xMin - 5, xMax + 5])
+                .domain([xMin - 1, xMax + 1])
                 .range([0, vis.svgWidth]);
             // Add Y axis
             let y = d3.scaleLinear()
-                .domain([yMin - 5, yMax + 5])
+                .domain([yMin - 1, yMax + 1])
                 .range([vis.svgHeight, 0]);
         
     
@@ -115,15 +115,14 @@ class projectionView{
                 .attr("class", (d, i) => `${allVariable[i]}PieChart`)
                 .attr('fill', 'rgb(200, 200, 200)')
                 .attr('d', pieRadius);
-            console.log("member: ", vis.register);
-            console.log('data: ', pieChartUpdate.data());
+        
             pieChartUpdate
                 .on('mouseover', pieTooltipMouseover)
                 .on('mouseleave', pieTooltipMouseleave)
     
             let simulation = d3.forceSimulation(vis.register);
     
-            simulation.force("collide", d3.forceCollide(d => 8)); // Force that avoids circle overlapping
+            simulation.force("collide", d3.forceCollide(d => 9)); // Force that avoids circle overlapping
             simulation.force("x", d3.forceX(d => x(d['positionX']))); // Each point attacted to its center x and y
             simulation.force("y", d3.forceY(d => y(d['positionY'])));
     
@@ -246,7 +245,10 @@ class projectionView{
                     vis.umapSVG.on(".drag", null);
                     vis.umapSVG.on(".dragend", null);
     
-                    vis.umapSVG
+                    
+                }
+            })
+            vis.umapSVG
                         .selectAll('.pie')
                         .on('click', function(d){
                         
@@ -328,8 +330,6 @@ class projectionView{
                         
     
                     })
-                }
-            })
             function lassoActivate(data, area) {
                 // Lasso functions
                 let lasso_start = function() {
@@ -416,5 +416,8 @@ class projectionView{
                 return lasso
             }
         }
+    }
+    firedMember(){
+        this.register=[]
     }
 }

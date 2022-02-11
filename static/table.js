@@ -1,6 +1,7 @@
 d3.select('.candidate-button')
     .select('#ClearAll')
     .on('click', () => {
+        projectionViewInterface.firedMember()
         d3.select('#condadidateBody')
             .selectAll('tr')
             .remove()
@@ -52,6 +53,7 @@ d3.select('.candidate-button')
         
         let candidateData = getRequest("/runCandidate", {"members": members})['data'];
         projectionViewInterface.registMember(candidateData);
+        sunburstUI.setVisitedSubspace(candidateData);
         // updateTreeColor(d3.select('#nodeGroup'))
 
     })
@@ -145,7 +147,7 @@ let click2RunVolume = function () {
             if (rw.getRenderers().length != 0){
                 renderer = rw.getRenderers()[0]
                 renderer.removeAllVolumes()
-                console.log('fuck');
+            
                 actor = setActor(vtkVolume)       
 
                 renderer.addActor(actor)
@@ -205,10 +207,10 @@ function readURL(input) {
                 })
                 valueCandidate.push(candidateTmp)
             })
-            console.log(valueCandidate);
+          
             drawTable(valueCandidate)
             tdHover()
-            sunburstUI.setVisitedSubspace(valueCandidate);
+            
 
             click2RunVolume()
             
@@ -258,7 +260,7 @@ function drawTable(members){
     }
     
     let concatData = data.concat(members)
-    console.log(concatData);
+
     let  eachRow= d3.select('#condadidateBody')
         .selectAll('tr')
         .data(concatData)
@@ -297,7 +299,7 @@ d3.select('#condadidateHead')
         tmpAllMember.sort(function(x, y){
             return d3.ascending(+x[tmpSortKey], +y[tmpSortKey])
         })
-        console.log('sortData: ',tmpAllMember);
+       
         d3.select('#condadidateBody')
             .selectAll('tr')
             .remove()
