@@ -21,7 +21,7 @@ The detail of the trained model please check [here](https://github.com/andy1213a
 
 ## Usage
 
-* Step1: Download the folder `model` by clicking [here](https://drive.google.com/drive/folders/1O5VLNXT3CVkpuehQr8VKPDylcOaakbUh?usp=sharing), which contain the models that are trained on different quantities and different loss functions. 
+* Step1: Download the folder `model` by clicking [here](https://drive.google.com/drive/folders/1pO2Y-CZprDJQT34To2mZNIEwIMQpvRYn?usp=sharing), which contain the models that are trained on different quantities and different loss functions. 
 The directory of the folder `model` should be saved at the same level of the file `app.py`.
 * Step2: Run `app.py` to activate the flask server. 
 * Step3: Copy the localhost address and paste into the website.
