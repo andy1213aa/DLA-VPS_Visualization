@@ -39,5 +39,5 @@ The directory of the folder `model` should be saved at the same level of the fil
 
 
 ## Notes
-* The details of each visual component and the use cases can be found in the theses [DLA-VPS](https://www.airitilibrary.com/Publication/alDetailedMesh1?DocID=U0021-NTNU40243).
+* The details of each visual component and the use cases can be found in the theses [DLA-VPS](https://ieeexplore.ieee.org/document/9763014).
 * Anyone is welcome to let us know how to improve in any way.
